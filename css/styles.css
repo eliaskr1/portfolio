@@ -1,0 +1,715 @@
+:root {
+  /* Default variables, these will be replaced by the theme classes */
+  --bg: #f9fbfd;
+  --text: #2d3748;
+  --accent: #3182ce;
+  --secondary: #4fd1c5; 
+  --neutral: #e2e8f0;
+  --card-hover: #edf2f7;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions for theme changes */
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--neutral);
+}
+
+header strong {
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 0.25rem;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 8rem 1rem;
+  background: url('../images/hero.jpg') center/cover no-repeat;
+  color: white;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 4rem;
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 1s ease-out;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+  opacity: 0.9;
+}
+
+.buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.buttons a {
+  display: inline-block;
+  padding: 0.85rem 1.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.buttons a:first-child {
+  background-color: var(--accent);
+  color: white;
+}
+
+.buttons a:nth-child(2) {
+  background-color: var(--secondary);
+  color: var(--text);
+}
+
+.buttons a:nth-child(3) {
+  background-color: white;
+  color: var(--text);
+}
+
+.buttons a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px var(--shadow);
+}
+
+section {
+  margin: 6rem 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.8s forwards;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 40%;
+  height: 3px;
+  background-color: var(--accent);
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: var(--neutral);
+  padding: 2rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px var(--shadow);
+}
+
+.project-card:hover {
+  background: var(--card-hover);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px var(--shadow);
+}
+
+.project-card h3 {
+  margin-bottom: 1rem;
+  color: var(--accent);
+  font-size: 1.5rem;
+}
+
+.project-card p {
+  margin-bottom: 1rem;
+}
+
+.project-card p:last-child {
+  margin-top: auto;
+}
+
+#about, #contact {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contact a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--accent);
+  transition: border-bottom 0.3s ease;
+}
+
+#contact a:hover {
+  border-bottom: 1px solid var(--accent);
+}
+
+footer {
+  text-align: center;
+  padding: 3rem 0 1rem;
+  font-size: 0.9rem;
+  color: var(--text);
+  opacity: 0.8;
+  border-top: 1px solid var(--neutral);
+  margin-top: 4rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  nav {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .hero {
+    padding: 6rem 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .buttons a {
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+  }
+}
+
+/* Add this for smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add these animation styles to your CSS file */
+
+/* Waving hand animation */
+.wave {
+  display: inline-block;
+  animation: none;
+}
+
+.wave.waving {
+  animation: wave 1s ease-in-out;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(30deg); }
+  40% { transform: rotate(15deg); }
+  60% { transform: rotate(30deg); }
+  80% { transform: rotate(15deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Skills section styling */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.skill-category {
+  background: var(--neutral);
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px var(--shadow);
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px var(--shadow);
+}
+
+.skill-category h3 {
+  margin-bottom: 1rem;
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+/* Button specific styling */
+.primary-btn {
+  background: linear-gradient(135deg, var(--accent), #2c5282) !important;
+  color: white !important;
+}
+
+/* Subtle loading animation for the page */
+body {
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Image hover zoom effect if you add project images later */
+.project-image {
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.project-image img {
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+
+.project-image:hover img {
+  transform: scale(1.05);
+}
+
+body.light-mode {
+  --bg: #f9fbfd;  /* Light blue-tinted white */
+  --text: #2d3748; /* Deep blue-gray text */
+  --accent: #3182ce; /* Professional blue */
+  --secondary: #4fd1c5; /* Teal as secondary accent */
+  --neutral: #e2e8f0; /* Light gray for cards */
+  --card-hover: #edf2f7; /* Slightly darker for hover states */
+  --shadow: rgba(0, 0, 0, 0.1); /* Shadow color */
+  --hero-overlay: rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode {
+  --bg: #1a202c; /* Deep blue-gray background */
+  --text: #e2e8f0; /* Light gray text */
+  --accent: #63b3ed; /* Lighter blue accent */
+  --secondary: #4fd1c5; /* Keep teal as secondary */
+  --neutral: #2d3748; /* Darker cards */
+  --card-hover: #353f50; /* Slightly lighter for hover states */
+  --shadow: rgba(0, 0, 0, 0.4); /* Darker shadow for dark mode */
+  --hero-overlay: rgba(0, 0, 0, 0.7);
+}
+
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px var(--shadow);
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--hero-overlay); /* Use the variable instead of fixed value */
+  z-index: 0;
+}
+
+body.light-mode .hero {
+  color: white; /* Keep text white in both modes for readability */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Add subtle text shadow for better readability */
+}
+
+/* Modal/Popup Styles */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal-container.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background-color: var(--bg);
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  border-radius: 16px;
+  overflow-y: auto;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  transform: translateY(-30px);
+  transition: transform 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-container.active .modal {
+  transform: translateY(0);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--neutral);
+  position: sticky;
+  top: 0;
+  background-color: var(--bg);
+  z-index: 1;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: var(--accent);
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--text);
+  transition: color 0.3s;
+}
+
+.close-modal:hover {
+  color: var(--accent);
+}
+
+.modal-content {
+  padding: 2rem;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px var(--shadow);
+  height: 400px;
+}
+
+/* Hide images by default */
+.slide {
+  display: none;
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+
+.slide.active {
+  display: block;
+  animation: fadeEffect 1s;
+}
+
+/* Image within slide */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Caption text */
+.slide-caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  padding: 1rem;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+  left: 0;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Slide indicator dots */
+.dots-container {
+  text-align: center;
+  margin-top: -2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.active-dot, .dot:hover {
+  background-color: var(--accent);
+}
+
+/* Fade animation */
+@keyframes fadeEffect {
+  from {opacity: 0.4}
+  to {opacity: 1}
+}
+
+.modal-description h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.modal-description p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.modal-description ul {
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+}
+
+.modal-description li {
+  margin-bottom: 0.5rem;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tech-tag {
+  background: var(--accent);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+/* Make project cards clickable */
+.project-card {
+  cursor: pointer;
+  position: relative;
+}
+
+.project-card::after {
+  content: "View Details →";
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: var(--accent);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Body scroll lock when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .modal {
+    width: 95%;
+  }
+  
+  .slideshow-container {
+    height: 300px;
+  }
+  
+  .slide {
+    height: 300px;
+  }
+  
+  .modal-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .prev, .next {
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .slideshow-container {
+    height: 220px;
+  }
+  
+  .slide {
+    height: 220px;
+  }
+  
+  .slide-caption {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .prev, .next {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elias Kroon - DevOps & SRE Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <strong>Elias Kroon</strong>
+      </div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>Hey, I'm Elias <span class="wave">👋</span></h1>
+        <p>Site Reliability Engineer Intern at Extenda Retail</p>
+        <p>DevOps Engineer student at Nackademin</p>
+        <div class="buttons">
+          <a href="#" class="primary-btn">Download Resume</a>
+          <a href="https://github.com/eliaskr1" class="primary-btn">GitHub Profile</a>
+          <a href="https://linkedin.com/in/eliaskroon/" class="primary-btn">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Featured Projects</h2>
+      <div class="projects">
+        <div class="project-card">
+          <h3>☀️ Sunny location</h3>
+          <p>A script that calculates between which times a location is in sun.</p>
+          <p>Takes input with x, y, z, coordinates, and altitude of potential sun blockers.</p>
+          <p><strong>Tech:</strong> Python, Pvlib</p>
+        </div>
+        <div class="project-card">
+          <h3>🧰 API Generator CLI</h3>
+          <p>A command-line tool that automatically builds Spanner-backed REST APIs from OpenAPI specs.</p>
+          <p>Reduces API development time by a significant margin through automated code generation.</p>
+          <p><strong>Tech:</strong> GCP, Spanner, Node.js, Docker, Github Actions</p>
+        </div>
+        <div class="project-card">
+          <h3>✅/❌ SLA Report Generator</h3>
+          <p>A CLI tool that evaluates service performance metrics against defined SLAs.</p>
+          <p>It automates data collection, validation, and reporting for consistent and repeatable monitoring.</p>
+          <p><strong>Tech:</strong> Node.js, Google Cloud Storage, Nunjucks</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <div class="skills-container">
+        <div class="skill-category">
+          <h3>Infrastructure</h3>
+          <p>Kubernetes, Docker, AWS, GCP, Terraform</p>
+        </div>
+        <div class="skill-category">
+          <h3>Backend</h3>
+          <p>Node.js, Python, Go, REST APIs</p>
+        </div>
+        <div class="skill-category">
+          <h3>DevOps</h3>
+          <p>CI/CD, GitHub Actions, Jenkins, Monitoring</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I'm a DevOps enthusiast passionate about building reliable, scalable cloud infrastructure. I focus on automation, observability, and continuous improvement of systems.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Get In Touch</h2>
+      <p>Looking for a DevOps or SRE professional? I'd love to chat about how I can help your team build more reliable infrastructure.</p>
+      <p>Reach out via <a href="mailto:elias.kroon19@gmail.com">elias.kroon19@gmail.com</a> or connect with me on <a href="https://linkedin.com/in/eliaskroon/">LinkedIn</a>.</p>
+    </section>
+
+    <footer>
+      <p>© 2025 Elias Kroon</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <div class="modal-container" id="project1-modal">
+      <div class="modal">
+        <div class="modal-header">
+          <h2>☀️ Sunny location</h2>
+          <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-content">
+          <!-- Slideshow Container -->
+          <div class="slideshow-container">
+            <!-- Full-width images with caption text -->
+            <div class="slide">
+              <img src="images/google_earth.jpg" alt="Infrastructure Pipeline Diagram">
+              <div class="slide-caption">Example data gathering from Google Earth</div>
+            </div>
+    
+            <div class="slide">
+              <img src="images/sun_output.jpg" alt="Terraform Code Example">
+              <div class="slide-caption">Placeholder terminal output</div>
+            </div>
+
+            <!-- Next and previous buttons -->
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+          </div>
+          <!-- Dots indicator -->
+          <div class="dots-container">
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+    
+          <div class="modal-description">
+            <h3>Project Overview</h3>
+            <p>Proof of concept for an application that calculates how sunny a location is. A creative solution to a specific issue, using the suns location and quite complex math.</p>
+            
+            <h3>Key Features</h3>
+            <ul>
+              <li>Calculates sun position based on date, time, and geographic coordinates</li>
+              <li>Analyzes sunlight availability at a given location using geometric modeling</li>
+              <li>Processes custom user input for surrounding obstructions (e.g. building height and distance)</li>
+              <li>Outputs time periods during which a location receives direct sunlight</li>
+            </ul>
+            
+            <h3>Technical Implementation</h3>
+            <p>
+              The project uses the Pvlib library to calculate the position of the sun at a given time and location. 
+              It takes into account the geographical coordinates, altitude, and potential obstructions to sunlight. 
+              The script processes user input data, which includes the height and distance of potential sun blockers, and calculates the times when the location is in direct sunlight.
+              Unfortunately, the project is blocked from further development by the fact that Google Earth does not allow for programmatic access to altitude of buildings, which is only available in zones with 3d mode.
+              Therefore it would take a lot of manual work to gather the data needed for the calculations.
+            </p>
+            
+            <h3>Technologies Used</h3>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Pvlib</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal-container" id="project2-modal">
+      <div class="modal">
+        <div class="modal-header">
+          <h2>🧰 API Generator CLI</h2>
+          <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-content">
+          <!-- Slideshow Container -->
+          <div class="slideshow-container">
+
+            <div class="slide">
+              <img src="images/cli_input.jpg" alt="CLI Command Example">
+              <div class="slide-caption">Command-line interface showing API generation process</div>
+            </div>
+    
+            <div class="slide">
+              <img src="images/file_structure.jpg" alt="Generated API Structure">
+              <div class="slide-caption">Structure of the generated API</div>
+            </div>
+    
+            <!-- Next and previous buttons -->
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+          </div>
+          <!-- Dots indicator -->
+          <div class="dots-container">
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+    
+          <div class="modal-description">
+            <h3>Project Overview</h3>
+            <p>A command-line tool that automatically builds Spanner-backed REST APIs with a template OpenAPI schema, reducing API development time by a significant margin through automated code generation.</p>
+            
+            <h3>Key Features</h3>
+            <ul>
+              <li>OpenAPI schema validation</li>
+              <li>Automatic database schema generation</li>
+              <li>Auto-generated CRUD endpoints and authentication</li>
+              <li>Built-in request validation and error handling</li>
+              <li>Deployment scripts for Google Cloud Run</li>
+              <li>Complete CICD workflows for automated testing, deployment, versioning and linting</li>
+            </ul>
+            
+            <h3>Technical Implementation</h3>
+            <p>
+              The CLI tool generates a fully functional REST API by creating a template OpenAPI schema, using user input to require minimal manual input for deployment. 
+              It scaffolds a Node.js backend with auto-generated CRUD operations, authentication, and middleware for validation and error handling. 
+              Simultaneously, it produces a matching database schema for Google Cloud Spanner, ensuring consistency between the API and data model. 
+              The tool streamlines deployment by generating Cloud Run configurations and opening a pull request to the organization’s Terraform GitHub repository, automating infrastructure setup and reducing manual overhead.
+            </p>
+            
+            <h3>Technologies Used</h3>
+            <div class="tech-tags">
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">GCP</span>
+              <span class="tech-tag">Spanner</span>
+              <span class="tech-tag">OpenAPI</span>
+              <span class="tech-tag">Cloud Run</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal-container" id="project3-modal">
+      <div class="modal">
+        <div class="modal-header">
+          <h2>✅/❌ SLA Report Generator</h2>
+          <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-content">
+          <!-- Slideshow Container -->
+          <div class="slideshow-container">
+            <!-- Full-width images with caption text -->
+            <div class="slide">
+              <img src="images/sla-terminal-output.jpg" alt="Terminal Output">
+              <div class="slide-caption">CLI output while running the report generator</div>
+            </div>
+    
+            <div class="slide">
+              <img src="images/report.jpg" alt="Example Report">
+              <div class="slide-caption">Example report using placeholder names and data</div>
+            </div>
+    
+            <!-- Next and previous buttons -->
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+          </div>
+          <!-- Dots indicator -->
+          <div class="dots-container">
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+    
+          <div class="modal-description">
+            <h3>Project Overview</h3>
+            <p>A script that evaluates actual performance metrics against service level agreements, and generates a report on it's findings. Automates the data collection, and ensures consistent reporting.</p>
+            
+            <h3>Key Features</h3>
+            <ul>
+              <li>Evaluates metrics against the actual SLIs</li>
+              <li>Gathers data from different sources for different SLIs</li>
+              <li>Automatic upload to Google Cloud storage</li>
+              <li>Templates to build professional looking documents</li>
+            </ul>
+            
+            <h3>Technical Implementation</h3>
+            <p>
+              The CLI tool is built using Node.js and leverages a modular architecture to ensure flexibility and scalability. 
+              It reads service level indicators (SLIs) from configuration files and pulls real-time data from various sources using API integrations and custom adapters. 
+              Once the data is collected, it evaluates the metrics against predefined thresholds and compiles the results into a structured report using Nunjucks templating. 
+              The final reports are exported as PDFs and automatically uploaded to a designated Google Cloud Storage bucket for centralized access and archiving.
+            </p>
+            
+            <h3>Technologies Used</h3>
+            <div class="tech-tags">
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">GCP</span>
+              <span class="tech-tag">Nunjucks</span>
+              <span class="tech-tag">Google Cloud Storage</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
